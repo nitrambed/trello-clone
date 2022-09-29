@@ -13,4 +13,8 @@ class BoardPolicy < ApplicationPolicy
   def update?
     edit?
   end
+
+  def destroy?
+    update?
+  end
 end

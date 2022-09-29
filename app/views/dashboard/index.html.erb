@@ -22,9 +22,9 @@
             <%= link_to edit_board_path(board), class: "flex w-0 justify-center flex-1 cursor-pointer" do%>
               <span class="text-sm">Edit</span>
             <% end %>
-            <div class="flex w-0 justify-center flex-1">
+            <%= link_to board_path(board), data: { "turbo-method": :delete }, class: "flex w-0 justify-center flex-1 cursor-pointer" do %>
               <span class="text-red-700 text-sm">Delete</span>
-            </div>
+            <% end %>
           </div>
         </div>
       <% end %>

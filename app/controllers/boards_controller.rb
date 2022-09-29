@@ -28,6 +28,11 @@ class BoardsController < ApplicationController
         end
     end
     
+    def destroy
+        authorize board
+        board.destroy
+        redirect_to root_path
+    end
 
     private
 
