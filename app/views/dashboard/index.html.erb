@@ -12,7 +12,7 @@
             </div>
 
             <div class="ml-4">
-              <h2 class="font-semibold"><%= board.name %></h2>
+              <h2 class="font-semibold"><%= link_to board.name, board_path(board), class: "hover:text-gray-700" %></h2>
               <p class="mt-1 text-xs text-gray-500">Last update <%= board.updated_at.strftime("%d/%m/%y - %H:%M") %></p>
             </div>
 
