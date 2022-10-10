@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   root to: "home#index"
   get "dashboard", to: "dashboard#index"
 
-  resources :boards, only: [:new, :edit, :show, :create, :update, :destroy]
+  resources :boards do
+    resources :lists, except: :show
+  end
 
   namespace :api do
     resources :boards do 
