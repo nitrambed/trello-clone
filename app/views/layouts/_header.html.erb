@@ -45,12 +45,22 @@
         </div>
       </div>
       <% if user_signed_in? %>
-        <%= link_to new_board_path, class: "relative inline-flex items-center rounded-md border bg-indigo-700 hover:bg-indigo-800 text-white px-3 py-2 text-base font-medium mr-3" do %>
-          <svg class="h-6 w-6 mr-2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 5.25v13.5"></path>
-            <path d="M18.75 12H5.25"></path>
-          </svg>
-          <span>New Board</span>
+        <% if controller_name == "boards" && action_name == "show" %>
+          <%= link_to new_board_list_path(@board), class: "relative inline-flex items-center rounded-md border bg-indigo-700 hover:bg-indigo-800 text-white px-3 py-2 text-base font-medium mr-3" do %>
+            <svg class="h-6 w-6 mr-2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 5.25v13.5"></path>
+              <path d="M18.75 12H5.25"></path>
+            </svg>
+            <span>New List</span>
+          <% end %>
+        <% else %>
+          <%= link_to new_board_path, class: "relative inline-flex items-center rounded-md border bg-indigo-700 hover:bg-indigo-800 text-white px-3 py-2 text-base font-medium mr-3" do %>
+            <svg class="h-6 w-6 mr-2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 5.25v13.5"></path>
+              <path d="M18.75 12H5.25"></path>
+            </svg>
+            <span>New Board</span>
+          <% end %>
         <% end %>
       <% else %>
         <div class="ml-4 flex flex-shrink-0 items-center">

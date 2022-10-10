@@ -1,6 +1,11 @@
-<div class="mx-auto max-w-full px-24 py-12" data-controller="board">
+<div class="mx-auto max-w-full px-24 py-12">
   <div class="mx-auto max-w-full">
-    <div id="board" class="overflow-x-scroll pb-4">
+    <div 
+      data-controller="board" 
+      data-api-url="<%= api_board_lists_path(@board) %>" 
+      data-board-lists-url="<%= board_lists_path(@board) %>"
+      id="board" 
+      class="overflow-x-scroll pb-4">
     </div>
   </div>
 </div>
